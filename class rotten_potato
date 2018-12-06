@@ -1,0 +1,71 @@
+class rotten_potato{
+    //control+shift+i to format
+    int[][] ratings = { {4, 6, 2, 5},
+            {7, 9, 4, 8},
+            {6, 9, 3, 7} };
+
+    public int movieAvgRating(int movie){
+        int average = 0;
+        for(int r = 0; r < ratings.length; r++){
+            for(int c = movie; c < movie+1; c++){
+                average+= ratings[r][c];
+            }
+        }
+        
+        return average/3;
+    }
+    
+     public int reviewerAvgRating(int reviewer){
+        int average = 0;
+        for(int r = reviewer; r < reviewer+1; r++){
+            for(int c = 0; c < ratings[0].length; c++){
+                average+= ratings[r][c];
+            }
+        }
+        
+        return average/4;
+    }
+    
+    public int avgRating2018(){
+        int parameters = 0;
+        int average = 0;
+        for(int r = 0; r < ratings.length; r++){
+            for(int c = 0; c < ratings[0].length; c++){
+                average+= ratings[r][c];
+                parameters++;
+            }
+            parameters++;
+        }
+        
+        return average/parameters;
+    }
+    
+    public int hardestRater2018(){
+        int rater = 0;
+        int average = 0;
+        //call other function then loop through
+        for(int r = 0; r < ratings.length; r++){
+            reviewerAvgRating(r);
+            if(reviewerAvgRating(r) < reviewerAvgRating(r+1)){
+                rater = r;
+            }
+        }
+        
+        return rater;
+    }
+    
+    public int worstMovie2018(){
+        int parameters = 0;
+        int average = 0;
+        for(int r = 0; r < ratings.length; r++){
+            for(int c = 0; c < ratings[0].length; c++){
+                average+= ratings[r][c];
+                parameters++;
+            }
+            parameters++;
+        }
+        
+        return average/parameters;
+    }
+
+}

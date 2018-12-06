@@ -20,27 +20,42 @@ Just to test yourself that you understand what's going on here. Ask yourself:
 1. What rating did Dwight give Rampage? How about Infinity War?
 2. What rating did Michael give Rampage? How about Infinity War?
 Answers are on the next page.
+
+
 Answers: Dwight gave Rampage a 4 and Infinity War a 6, while Michael gave Rampage a 6 and
 Infinity War a 9.
+
+
 You will have to provide your own fake data to test your assignment. There is a shortcut way to
 do this. To make the above grid as a 2D int array, use the following code:
 int[][] ratings = { {4,6,2,5},
  {7,9,4,8},
  {6,9,3,7} };
+ 
+ 
+ 
 Question 1: Write the method movieAverageRating() that takes a Rotten Potato database (2D
 int array) as a parameter and another int that represents a particular movie. Return the average
 rating for that movie.
 public int movieAvgRating(int[][] ratings, int movie)
+
+
 Question 2: Write a method that takes a Rotten Potato database (2D int array) as a parameter
 and another int that represents a particular movie reviewer. Return the average rating for that
 particular reviewer.
 public int reviewerAvgRating(int[][] ratings, int reviewer)
+
+
 Question 3: Write a method that takes a Rotten Potato database (2D int array) as a parameter.
 Return the average movie rating for all movies and all reviewers in the database.
 public int avgRating2018(int[][] ratings)
+
+
 Question 4: Write a method that takes a Rotten Potato database (2D int array) as a parameter.
 Return the index of the hardest reviewer (the reviewer with the lowest average ranking).
 public int hardestRater2018(int[][] ratings)
+
+
 Question 5: Write a method that takes a Rotten Potato database (2D int array) as a parameter.
 Return the index of the worst movie (the movie with the lowest average ranking).
 public int worstMovie2018(int[][] ratings)

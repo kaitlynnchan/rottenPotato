@@ -42,30 +42,27 @@ class rotten_potato{
     
     public int hardestRater2018(){
         int rater = 0;
-        int average = 0;
+        int raterAverage = 0;
         //call other function then loop through
         for(int r = 0; r < ratings.length; r++){
             reviewerAvgRating(r);
-            if(reviewerAvgRating(r) < reviewerAvgRating(r+1)){
-                rater = r;
-            }
+            if(reviewerAvgRating(r) < raterAverage) rater = r;
+            if(r == 0) raterAverage = reviewerAvgRating(r);
         }
         
         return rater;
     }
     
     public int worstMovie2018(){
-        int parameters = 0;
-        int average = 0;
-        for(int r = 0; r < ratings.length; r++){
-            for(int c = 0; c < ratings[0].length; c++){
-                average+= ratings[r][c];
-                parameters++;
-            }
-            parameters++;
+        int movie = 0;
+        int movieAverage = 0;
+        for(int c = 0; c < ratings[0].length; c++){
+            movieAvgRating(c);
+            if(movieAvgRating(c) < movieAverage) movie = c;
+            if(c == 0) movieAverage = movieAvgRating(c);
         }
         
-        return average/parameters;
+        return movie;
     }
 
 }
